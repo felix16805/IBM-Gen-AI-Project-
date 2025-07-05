@@ -24,7 +24,7 @@ def fetch_news():
 
 # ---- Summarize with Gemini ----
 def summarize_article(content):
-    prompt = f"""Summarize the following news article in brief even if content is short:\n\n{content}\n\nSummary:"""
+    prompt = f"""Summarize the following news article in brief and detail about 4 lines even if content is short:\n\n{content}\n\nSummary:"""
     response = model.generate_content(prompt)
     return response.text.strip()
 
