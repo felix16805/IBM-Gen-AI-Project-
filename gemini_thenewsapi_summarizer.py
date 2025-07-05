@@ -1,10 +1,13 @@
 import streamlit as st
 import requests
 import google.generativeai as genai
+from dotenv import load_dotenv
+import os
 
-# ---- API Keys ----
-GEMINI_API_KEY = "AIzaSyCsowIXGV_w-Qyo-ck12OlIsBTAc2stNlA"
-THENEWSAPI_KEY = "6ATbjnq6p3k9UvsY24JkZhf9oRux0r0RIdZwxBxI"
+# ---- Load API Keys from .env ----
+load_dotenv()
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+THENEWSAPI_KEY = os.getenv("THENEWSAPI_KEY")
 
 # ---- Configure Gemini ----
 genai.configure(api_key=GEMINI_API_KEY)
